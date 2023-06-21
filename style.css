@@ -1,5 +1,14 @@
 /* Add this code to your style.css file */
 
+@keyframes open-envelope {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+
 @keyframes pull-out-card {
   0% {
     transform: translateY(0);
@@ -12,21 +21,56 @@
   }
 }
 
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f1f1f1; /* Adjust the background color as needed */
+}
+
 .envelope {
   position: relative;
-  overflow: hidden;
-  height: 250px; /* Adjust the height as needed */
-  width: 200px; /* Adjust the width as needed */
+  width: 300px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  transform-style: preserve-3d;
+  animation: open-envelope 1s forwards;
+}
+
+.flap-top,
+.flap-bottom {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: #ffffff; /* Adjust the flap color as needed */
+}
+
+.flap-top {
+  top: 0;
+  transform-origin: top;
+  transform: rotateX(0);
+  animation: open-envelope 1s forwards;
+}
+
+.flap-bottom {
+  bottom: 0;
+  transform-origin: bottom;
+  transform: rotateX(0);
+  animation: open-envelope 1s forwards;
 }
 
 .card {
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #FFCBA4; /* Adjust the background color as needed */
+  transform-origin: bottom;
+  transform: translateY(100%);
+  background-color: #ffe5c9; /* Adjust the card color as needed */
   animation: pull-out-card 1s forwards;
+  animation-delay: 1s;
+  overflow: hidden;
 }
 
 .card-content {
