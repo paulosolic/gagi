@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Wedding Invitation</title>
+    <style>
+        /* Styles for the envelope */
+        #envelope {
+            width: 20cm;
+            height: 20cm;
+            position: relative;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        /* Styles for the invitation */
+        #invitation {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: -100%;
+            background-color: #ffffff;
+            transition: top 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="envelope" onclick="openEnvelope()">
+        <div id="invitation">
+            <!-- Add your invitation details here -->
+            <h1>John and Jane's Wedding</h1>
+            <p>Date: October 10, 2023</p>
+            <p>Location: Some Venue</p>
+        </div>
+    </div>
+
+    <script>
+        function openEnvelope() {
+            var envelope = document.getElementById('envelope');
+            var invitation = document.getElementById('invitation');
+
+            // Open the envelope and show the invitation
+            envelope.style.transform = 'rotateX(180deg)';
+            invitation.style.top = '0';
+        }
+    </script>
+</body>
+</html>
