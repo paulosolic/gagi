@@ -31,6 +31,7 @@
             transition: top 0.5s;
             text-align: center;
             padding-top: 30px;
+            transform: rotateX(180deg);
         }
     </style>
 </head>
@@ -51,7 +52,7 @@
             var invitation = document.getElementById('invitation');
 
             // Open the envelope and show the invitation
-            envelope.style.transform = 'rotateX(180deg)';
+            envelope.style.transform = 'rotateX(0deg)';
             invitation.style.top = '0';
         }
     </script>
