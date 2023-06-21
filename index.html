@@ -15,6 +15,12 @@
             transition: transform 0.5s;
         }
 
+        /* Styles for the envelope image */
+        #envelope img {
+            width: 100%;
+            height: auto;
+        }
+
         /* Styles for the invitation */
         #invitation {
             width: 100%;
@@ -23,11 +29,14 @@
             top: -100%;
             background-color: #ffffff;
             transition: top 0.5s;
+            text-align: center;
+            padding-top: 30px;
         }
     </style>
 </head>
 <body>
     <div id="envelope" onclick="openEnvelope()">
+        <img src="envelope.png" alt="Envelope" />
         <div id="invitation">
             <!-- Add your invitation details here -->
             <h1>John and Jane's Wedding</h1>
